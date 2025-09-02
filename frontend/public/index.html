@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BioClass URL Shortener</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🔗 BioClass URL Shortener</h1>
+      <p>bioclass.kr 도메인으로 URL을 단축하세요</p>
+    </header>
+
+    <main>
+      <form id="urlForm" class="url-form">
+        <div class="input-group">
+          <input
+            type="url"
+            id="originalUrl"
+            placeholder="https://example.com/very/long/url/that/needs/shortening"
+            required
+          >
+          <button type="submit" id="shortenBtn">단축하기</button>
+        </div>
+      </form>
+
+      <div id="result" class="result hidden">
+        <div class="result-content">
+          <h3>✅ URL 단축 완료!</h3>
+
+          <div class="url-display">
+            <div class="original-url">
+              <strong>원본 URL:</strong>
+              <span id="originalUrlDisplay"></span>
+            </div>
+
+            <div class="short-url">
+              <strong>단축 URL:</strong>
+              <div class="url-copy">
+                <input type="text" id="shortUrlDisplay" readonly>
+                <button id="copyBtn" class="copy-btn">복사</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="qr-section">
+            <h4>📱 QR 코드</h4>
+            <img id="qrCode" alt="QR Code" class="qr-image">
+            <p class="qr-hint">QR 코드를 스캔하여 바로 접속하세요</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="loading" class="loading hidden">
+        <div class="spinner"></div>
+        <p>URL 단축 중...</p>
+      </div>
+
+      <div id="error" class="error hidden">
+        <div class="error-content">
+          <h3>❌ 오류 발생</h3>
+          <p id="errorMessage"></p>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 BioClass.kr | 간단한 URL 단축 서비스</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
