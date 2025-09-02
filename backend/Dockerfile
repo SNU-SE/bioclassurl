@@ -6,6 +6,9 @@ WORKDIR /app
 # Copy package files
 COPY package*.json ./
 
+# Install curl for health check
+RUN apk add --no-cache curl
+
 # Install dependencies
 RUN npm ci --only=production
 
